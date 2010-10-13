@@ -52,8 +52,9 @@ class DocumentType(models.Model):
         
         This provides a sensible default value for a Document before saving it.
         """
-        return cls.objects.get_or_create(mimetype="application/octet-stream",
-                                         name="Unknown type")
+        obj, created = cls.objects.get_or_create(mimetype="application/octet-stream",
+                                                 name="Unknown type")
+        return obj
     
     @classmethod
     def type_for_file(cls, file):
@@ -63,7 +64,8 @@ class DocumentType(models.Model):
             filename = file
         mimetype, encoding = mimetypes.guess_type(filename)
         mimetype = mimetype or "application/octet-stream"
-        return cls.objects.get_or_create(mimetype=mimetype, name=mimetype)
+        obj, created = cls.objects.get_or_create(mimetype=mimetype, name=mimetype)
+        return obj
 
 
 class Document(models.Model):
