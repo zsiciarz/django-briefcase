@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>An example project using django-briefcase</title>
+  <meta name="author" content="Zbigniew Siciarz" />
+</head>
+<body>
+  <div id="container">
+    <header>
+      <h1>Documents</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="{% url recent_documents %}">Recent documents</a></li>
+        <li><a href="{% url my_documents %}">My documents</a></li>
+      </ul>
+    </nav>
+
+    <div id="main">
+      {% block content %}
+      {% endblock %}
+    </div>
+
+    <footer>
+     <p>&copy; Zbigniew Siciarz 2010</p>
+    </footer>
+  </div>
+</body>
+</html>

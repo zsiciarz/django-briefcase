@@ -14,3 +14,8 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
 )
+
+urlpatterns += patterns('briefcase.views',
+    url(r'^$',                      'recent_documents',     name='recent_documents'),
+    url(r'^my_documents/$',         'my_documents',         name='my_documents')
+)
