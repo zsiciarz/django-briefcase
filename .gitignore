@@ -1,0 +1,10 @@
+*~
+*.pyo
+*.pyc
+.project
+.pydevproject
+.settings
+dist/
+build/
+*.egg-info
+example.db
