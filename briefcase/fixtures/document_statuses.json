@@ -1,0 +1,29 @@
+[
+    {
+        "pk": 2, 
+        "model": "briefcase.documentstatus", 
+        "fields": {
+            "description": "", 
+            "name": "Unreviewed", 
+            "slug": "unreviewed"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "briefcase.documentstatus", 
+        "fields": {
+            "description": "", 
+            "name": "Published", 
+            "slug": "published"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "briefcase.documentstatus", 
+        "fields": {
+            "description": "", 
+            "name": "Draft", 
+            "slug": "draft"
+        }
+    }
+]
