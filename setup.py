@@ -16,6 +16,7 @@ setup(
     install_requires=['Django', 'south'],
     packages=[
         'briefcase',
+        'briefcase.migrations',
     ],
     include_package_data=True,
     classifiers=['Development Status :: 2 - Pre-Alpha',
