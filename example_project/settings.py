@@ -103,3 +103,10 @@ INSTALLED_APPS = (
     'south',
     'briefcase',
 )
+
+try:
+    import debug_toolbar
+    INSTALLED_APPS += ('debug_toolbar',)
+    MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
+except ImportError:
+    print "django-debug-toolbar is not installed"
