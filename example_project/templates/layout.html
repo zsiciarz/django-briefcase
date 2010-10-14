@@ -4,16 +4,18 @@
   <meta charset="utf-8" />
   <title>An example project using django-briefcase</title>
   <meta name="author" content="Zbigniew Siciarz" />
+  <link href="{{ MEDIA_URL }}css/style.css" rel="stylesheet" />
 </head>
 <body>
   <div id="container">
     <header>
-      <h1>Documents</h1>
+      <h1>My awesome briefcase</h1>
     </header>
     <nav>
       <ul>
         <li><a href="{% url recent_documents %}">Recent documents</a></li>
         <li><a href="{% url my_documents %}">My documents</a></li>
+        <li><a href="{% url admin:index %}">Administration</a></li>
       </ul>
     </nav>
 

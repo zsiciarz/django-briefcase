@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.conf.urls.defaults import *
 
 # Uncomment the next two lines to enable the admin:
@@ -19,3 +20,9 @@ urlpatterns += patterns('briefcase.views',
     url(r'^$',                      'recent_documents',     name='recent_documents'),
     url(r'^my_documents/$',         'my_documents',         name='my_documents')
 )
+
+if settings.DEBUG:
+    urlpatterns += patterns('',
+        (r'^site_media/(?P<path>.*)$', 'django.views.static.serve', 
+         {'document_root': settings.MEDIA_ROOT}),
+    )
