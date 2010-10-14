@@ -88,3 +88,6 @@ class Document(models.Model):
 
     def __unicode__(self):
         return os.path.basename(self.file.name)
+
+    def get_size(self):
+        return self.file.size
