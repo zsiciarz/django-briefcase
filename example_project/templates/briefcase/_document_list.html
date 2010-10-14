@@ -1,0 +1,7 @@
+<ol class="document-list">
+{% for document in document_list %}
+  <li>
+    <a href="#">{{ document }}</a> <span class="filesize">({{ document.file.size|filesizeformat }})</span>
+  </li>
+{% endfor %}
+</ol>

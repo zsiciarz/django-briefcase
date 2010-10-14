@@ -2,7 +2,5 @@
 
 {% block content %}
 <h2>Recent documents</h2>
-{% for document in document_list %}
-  {{ document }}
-{% endfor %}
+{% include "briefcase/_document_list.html" %}
 {% endblock %}
