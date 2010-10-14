@@ -15,6 +15,10 @@ class DocumentTypeAdmin(admin.ModelAdmin):
 class DocumentAdmin(admin.ModelAdmin):
     list_display = ('__unicode__', 'status', 'added_by', 'added_at', 'updated_at',)
     list_display_links = ('__unicode__',)
+    
+    def save_model(self, request, obj, form, change):
+        obj.added_by = request.user
+        super(DocumentAdmin, self).save_model(request, obj, form, change)
 
 
 admin.site.register(DocumentStatus, DocumentStatusAdmin)
