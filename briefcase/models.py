@@ -70,9 +70,14 @@ class DocumentType(models.Model):
             filename = file.name
         else:
             filename = file
+        # get the extension _without_ a leading dot and normalize case
+        extension = os.path.splitext(filename)[1]
+        extension = extension[1:].lower()
         mimetype, encoding = mimetypes.guess_type(filename)
         mimetype = mimetype or "application/octet-stream"
-        obj, created = cls.objects.get_or_create(mimetype=mimetype, name=mimetype)
+        obj, created = cls.objects.get_or_create(extension=extension,
+                                                 mimetype=mimetype,
+                                                 name=mimetype)
         return obj
 
 
