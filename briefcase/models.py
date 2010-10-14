@@ -8,6 +8,13 @@ from django.db.models.fields.files import FieldFile
 from django.utils.translation import ugettext_lazy as _
 
 
+# additional mimetypes, for example Office 2007/2010 documents
+mime_file = os.path.join(os.path.realpath(os.path.dirname(__file__)), 'data/mime.types')
+type_map = mimetypes.read_mime_types(mime_file)
+for extension, mime_type in type_map.iteritems():
+    mimetypes.add_type(mime_type, extension)
+
+
 class DocumentStatus(models.Model):
     u"""
     Status of the document.
