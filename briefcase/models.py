@@ -39,6 +39,7 @@ class DocumentType(models.Model):
     u"""
     File type (eg. PDF file, MS Word file etc.).
     """
+    extension   = models.CharField(_("File extension"), max_length=12, blank=True, help_text=("File extension for this type (without the dot, eg. 'jpg')."))
     mimetype    = models.CharField(_("MIME type"), max_length=127, default="application/octet-stream", help_text=_("File MIME type as defined by <a href=\"http://tools.ietf.org/html/rfc4288#section-4.2\">RFC 4288</a>, for example: 'image/jpeg'"))
     name        = models.CharField(_("Full name"), max_length=250, blank=True, help_text=_("Human-readable name of the type, for example 'JPG Image'"))
 
@@ -81,7 +82,7 @@ class Document(models.Model):
     """
     # Basic document data.
     file = models.FileField(verbose_name=_("file"), upload_to='uploads/%Y/%m/%d/', help_text=_("This is the document itself - well, just a file."))
-    type = models.ForeignKey(DocumentType, verbose_name=_("document type"), default=DocumentType.unknown_type, help_text=_("Document type, for example 'Microsoft Word Document' or 'PDF File'."))
+    type = models.ForeignKey(DocumentType, verbose_name=_("document type"), blank=True, null=True, help_text=_("Document type, for example 'Microsoft Word Document' or 'PDF File'."))
     # Meta-information.
     status      = models.ForeignKey(DocumentStatus, verbose_name=_("document status"), null=True, blank=True)
     added_by    = models.ForeignKey(User, verbose_name=_("added by"), null=True, blank=True, editable=False)
