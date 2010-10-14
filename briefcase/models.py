@@ -96,5 +96,16 @@ class Document(models.Model):
     def __unicode__(self):
         return os.path.basename(self.file.name)
 
+    def save(self, *args, **kwargs):
+        u"""
+        Attaches a guessed DocumentType to the Document object.
+        
+        The check for id is a standard way to determine whether the object
+        is created (no row in the database yet, hence no id) or updated.
+        """
+        if not self.id:
+            self.type = DocumentType.type_for_file(self.file)
+        super(Document, self).save(*args, **kwargs)
+
     def get_size(self):
         return self.file.size
