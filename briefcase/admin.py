@@ -17,7 +17,8 @@ class DocumentAdmin(admin.ModelAdmin):
     list_display_links = ('__unicode__',)
     
     def save_model(self, request, obj, form, change):
-        obj.added_by = request.user
+        if not change:
+            obj.added_by = request.user
         super(DocumentAdmin, self).save_model(request, obj, form, change)
 
 
