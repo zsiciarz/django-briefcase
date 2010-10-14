@@ -17,6 +17,16 @@ class DocumentAdmin(admin.ModelAdmin):
     list_display_links = ('__unicode__',)
     list_filter = ('type', 'status',)
     
+    def queryset(self, request):
+        u"""
+        Forces a JOIN to DocumentType and User models.
+        
+        Cannot be achieved by setting list_select_related=True, because
+        the foreign key fields have null=True. We have an OUTER JOIN here.
+        """
+        qs = super(DocumentAdmin, self).queryset(request)
+        return qs.select_related('type', 'added_by')
+
     def save_model(self, request, obj, form, change):
         if not change:
             obj.added_by = request.user
