@@ -76,8 +76,10 @@ class DocumentType(models.Model):
         mimetype, encoding = mimetypes.guess_type(filename)
         mimetype = mimetype or "application/octet-stream"
         obj, created = cls.objects.get_or_create(extension=extension,
-                                                 mimetype=mimetype,
-                                                 name=mimetype)
+                                                 mimetype=mimetype)
+        if created:
+            obj.name = extension.upper() + ' Document'
+            obj.save()
         return obj
 
 
