@@ -9,7 +9,7 @@
 <ol class="document-list">
 {% for document in document_list %}
   <li>
-    <a href="#">{{ document }}</a> <span class="filesize">({{ document.get_size|filesizeformat }})</span>
+    <a href="{% url download_document document.id %}">{{ document }}</a> <span class="filesize">({{ document.get_size|filesizeformat }})</span>
   </li>
 {% endfor %}
 </ol>
