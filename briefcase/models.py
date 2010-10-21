@@ -66,6 +66,17 @@ class DocumentType(models.Model):
     
     @classmethod
     def type_for_file(cls, file):
+        u"""
+        Finds an apropriate DocumentType for the given file.
+        
+        ``file`` can be a Django model field (of type ``FileField``, which is 
+        accessed as ``FieldFile``), or simply a filename as a string.
+        
+        If there were no such document type in the database, a new one is
+        created, with default name consisting of uppercase extension and the
+        'Document' word, for example: 'XLS Document'. This name can be of course
+        changed in the admin.
+        """
         if isinstance(file, FieldFile):
             filename = file.name
         else:
