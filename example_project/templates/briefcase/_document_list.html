@@ -5,6 +5,7 @@
 <h3>Showing only documents of type: {{ document_type }}</h3>
 {% endif %}
 
+{% if document_list %}
 <ol class="document-list">
 {% for document in document_list %}
   <li>
@@ -12,5 +13,8 @@
   </li>
 {% endfor %}
 </ol>
+{% else %}
+<p>No documents found.</p>
+{% endif %}
 
 {% paginate %}
