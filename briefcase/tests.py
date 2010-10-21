@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from django import template
 from django.test import TestCase
 from briefcase.models import DocumentType
 
@@ -44,3 +45,59 @@ class DocumentTypeTestCase(TestCase):
         another_type = DocumentType.type_for_file("another.txt")
         second_id = another_type.id
         self.assertEqual(first_id, second_id)
+
+
+class TemplateTagsTestCase(TestCase):
+    u"""
+    Utility class for testing template tags.
+    """
+    def setUp(self):
+        u"""
+        Initializes an empty template context - just in case.
+        """
+        self.context = template.Context({})
+        
+    def render(self, template_content):
+        t = template.Template(template_content)
+        return t.render(self.context)
+
+    def assertIncorrectSyntax(self, template_content):
+        def _render(template_content):
+            t = template.Template(template_content)
+            t.render(self.context)
+        self.assertRaises(template.TemplateSyntaxError, _render, template_content)
+    
+    def assertContextHasntVariable(self, variable_name):
+        self.assertFalse(variable_name in self.context)
+            
+    def assertContextHasVariable(self, variable_name):
+        self.assertTrue(variable_name in self.context)
+
+
+class DocumentTemplateTagsTestCase(TemplateTagsTestCase):
+    u"""
+    Tests for the {% get_document_types %} template tag.
+    """
+    def test_get_document_types_raises_without_arguments(self):
+        template_content = u"""
+        {% load document_tags %}
+        {% get_document_types %}
+        """
+        self.assertIncorrectSyntax(template_content)
+
+    def test_get_document_types_raises_with_bad_arguments(self):
+        template_content = u"""
+        {% load document_tags %}
+        {% get_document_types for me %}
+        """
+        self.assertIncorrectSyntax(template_content)
+
+    def test_get_document_types_creates_context_variable(self):
+        template_content = u"""
+        {% load document_tags %}
+        {% get_document_types as document_types %}
+        """
+        # sanity check
+        self.assertContextHasntVariable('document_types')
+        self.render(template_content)
+        self.assertContextHasVariable('document_types')
