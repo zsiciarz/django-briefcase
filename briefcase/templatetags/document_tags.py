@@ -36,7 +36,7 @@ class DocumentTypesNode(Node):
         self.as_varname = as_varname
     
     def render(self, context):
-        document_types = DocumentType.objects.all().order_by('extension')
+        document_types = DocumentType.objects.exclude(extension__exact='').order_by('extension')
         context[self.as_varname] = document_types
         return ''
 
