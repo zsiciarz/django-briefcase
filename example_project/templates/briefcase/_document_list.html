@@ -1,3 +1,6 @@
+{% load pagination_tags %}
+{% autopaginate document_list 5 %}
+
 <ol class="document-list">
 {% for document in document_list %}
   <li>
@@ -5,3 +8,5 @@
   </li>
 {% endfor %}
 </ol>
+
+{% paginate %}

@@ -258,7 +258,31 @@ h2 {
   color: #999;
   margin-left: 6px;
 }
-
+.pagination {
+    float: left;
+    position: relative;
+    left: 50%;
+}
+.pagination > * {
+  display: block;
+  float: left;
+  position: relative;
+  right: 50%;
+  padding: 3px 5px;
+  margin: 0 3px;
+}
+.pagination a {
+  border: 1px #ddd solid;
+  text-decoration: none;
+}
+.pagination a:hover {
+  background: #036;
+  color: #fff;
+}
+.pagination .current {
+  font-weight: bold;
+  padding: 4px 5px;
+}
 
 
 
