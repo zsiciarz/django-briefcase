@@ -3,7 +3,7 @@
 from django.test import TestCase
 from briefcase.models import DocumentType
 
-class DocumentTypeTest(TestCase):
+class DocumentTypeTestCase(TestCase):
     def setUp(self):
         import mimetypes
         self.mimetypes = mimetypes.types_map.iteritems()
