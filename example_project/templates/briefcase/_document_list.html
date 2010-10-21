@@ -1,6 +1,10 @@
 {% load pagination_tags %}
 {% autopaginate document_list 5 %}
 
+{% if document_type %}
+<h3>Showing only documents of type: {{ document_type }}</h3>
+{% endif %}
+
 <ol class="document-list">
 {% for document in document_list %}
   <li>

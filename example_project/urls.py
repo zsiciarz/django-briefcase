@@ -17,8 +17,9 @@ urlpatterns = patterns('',
 )
 
 urlpatterns += patterns('briefcase.views',
-    url(r'^$',                      'general.recent_documents',     name='recent_documents'),
-    url(r'^my_documents/$',         'per_user.my_documents',        name='my_documents')
+    url(r'^$',                                  'general.recent_documents', name='recent_documents'),
+    url(r'^my_documents/$',                     'per_user.my_documents',    name='my_documents'),
+    url(r'^my_documents/(?P<extension>\w+)/$',  'per_user.my_documents',    name='my_documents_by_extension'),
 )
 
 if settings.DEBUG:
