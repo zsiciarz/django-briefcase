@@ -128,3 +128,6 @@ class Document(models.Model):
 
     def get_size(self):
         return self.file.size
+
+    def get_filename(self):
+        return os.path.basename(self.file.name)
