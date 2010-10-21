@@ -228,6 +228,7 @@ nav a:hover {
 }
 #main {
   padding: 20px 20px 40px;
+  overflow: auto;
 }
 h2 {
   color: #036;
@@ -258,10 +259,42 @@ h2 {
   color: #999;
   margin-left: 6px;
 }
+.sidebar {
+  width: 20%;
+  float: right;
+  background: #eee;
+  margin: -20px -20px 0 0;
+  padding: 20px;
+}
+.sidebar h1 {
+  color: #666;
+  font: normal 120% Georgia, Times, serif;
+}
+.document-types {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+}
+.document-types li {
+  margin: 4px 0;
+}
+.document-types li:first-child {
+  padding-bottom: 5px;
+  border-bottom: 1px #fff solid;
+}
+.document-types a {
+  color: #888;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.document-types a:hover {
+  color: #036;
+}
 .pagination {
     float: left;
     position: relative;
     left: 50%;
+    clear: both;
 }
 .pagination > * {
   display: block;

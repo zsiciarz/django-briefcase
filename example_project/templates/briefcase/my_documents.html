@@ -1,6 +1,20 @@
 {% extends "layout.html" %}
+{% load document_tags %}
 
 {% block content %}
+
+<section class="sidebar">
+<h1>Document types</h1>
+{% get_document_types as document_types %}
+<ul class="document-types">
+<li><a href="{% url my_documents %}">All</a></li>
+{% for type in document_types %}
+<li><a href="{% url my_documents_by_extension type.extension %}">{{ type.extension }}</a></li>
+{% endfor %}
+</ul>
+</section>
+
 <h2>My documents</h2>
+
 {% include "briefcase/_document_list.html" %}
 {% endblock %}
