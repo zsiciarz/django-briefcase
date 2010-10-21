@@ -1,0 +1,119 @@
+[
+    {
+        "pk": 10, 
+        "model": "briefcase.documenttype", 
+        "fields": {
+            "mimetype": "image/gif", 
+            "name": "GIF Image", 
+            "extension": "gif"
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "briefcase.documenttype", 
+        "fields": {
+            "mimetype": "image/jpeg", 
+            "name": "JPG Image", 
+            "extension": "jpg"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "briefcase.documenttype", 
+        "fields": {
+            "mimetype": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", 
+            "name": "Microsoft Excel Spreadsheet (2007-2010)", 
+            "extension": "xlsx"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "briefcase.documenttype", 
+        "fields": {
+            "mimetype": "application/vnd.ms-excel", 
+            "name": "Microsoft Excel Spreadsheet (97-2003)", 
+            "extension": "xls"
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "briefcase.documenttype", 
+        "fields": {
+            "mimetype": "application/vnd.openxmlformats-officedocument.presentationml.presentation", 
+            "name": "Microsoft PowerPoint Presentation (2007-2010)", 
+            "extension": "pptx"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "briefcase.documenttype", 
+        "fields": {
+            "mimetype": "application/vnd.ms-powerpoint", 
+            "name": "Microsoft PowerPoint Presentation (97-2003)", 
+            "extension": "ppt"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "briefcase.documenttype", 
+        "fields": {
+            "mimetype": "application/vnd.openxmlformats-officedocument.wordprocessingml.document", 
+            "name": "Microsoft Word Document (2007-2010)", 
+            "extension": "docx"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "briefcase.documenttype", 
+        "fields": {
+            "mimetype": "application/msword", 
+            "name": "Microsoft Word Document (97-2003)", 
+            "extension": "doc"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "briefcase.documenttype", 
+        "fields": {
+            "mimetype": "application/pdf", 
+            "name": "PDF Document", 
+            "extension": "pdf"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "briefcase.documenttype", 
+        "fields": {
+            "mimetype": "text/plain", 
+            "name": "Plain text file", 
+            "extension": "txt"
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "briefcase.documenttype", 
+        "fields": {
+            "mimetype": "text/rtf", 
+            "name": "Rich Text Format Document", 
+            "extension": "rtf"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "briefcase.documenttype", 
+        "fields": {
+            "mimetype": "application/octet-stream", 
+            "name": "Unknown type", 
+            "extension": ""
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "briefcase.documenttype", 
+        "fields": {
+            "mimetype": "application/octet-stream", 
+            "name": "application/octet-stream", 
+            "extension": ""
+        }
+    }
+]
