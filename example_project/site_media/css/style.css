@@ -247,8 +247,25 @@ h2 {
   list-style: none;
 }
 .document-list li {
-  margin: 8px 0;
+  margin: 10px 0;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-image: url(../images/icons/32/new_page.png);
+  padding: 0 0 0 40px;
+  line-height: 40px;
+  height: 40px;
 }
+.document-list .jpg_file { background-image: url(../images/icons/32/jpg_file.png); }
+.document-list .gif_file { background-image: url(../images/icons/32/gif_file.png); }
+.document-list .png_file { background-image: url(../images/icons/32/png_file.png); }
+.document-list .pdf_file { background-image: url(../images/icons/32/pdf_file.png); }
+.document-list .txt_file { background-image: url(../images/icons/32/txt_file.png); }
+.document-list .doc_file { background-image: url(../images/icons/32/doc_file.png); }
+.document-list .docx_file { background-image: url(../images/icons/32/doc_file.png); }
+.document-list .ppt_file { background-image: url(../images/icons/32/ppt_file.png); }
+.document-list .pptx_file { background-image: url(../images/icons/32/ppt_file.png); }
+.document-list .xls_file { background-image: url(../images/icons/32/xls_file.png); }
+.document-list .xlsx_file { background-image: url(../images/icons/32/xls_file.png); }
 .document-list a {
   color: #444;
 }
