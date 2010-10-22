@@ -1,8 +1,9 @@
+{% load i18n %}
 {% load pagination_tags %}
 {% autopaginate document_list 5 %}
 
 {% if document_type %}
-<h3>Showing only documents of type: {{ document_type }}</h3>
+<h3>{% trans "Showing only documents of type:" %} {{ document_type }}</h3>
 {% endif %}
 
 {% if document_list %}
@@ -14,7 +15,7 @@
 {% endfor %}
 </ol>
 {% else %}
-<p>No documents found.</p>
+<p>{% trans "No documents found." %}</p>
 {% endif %}
 
 {% paginate %}
