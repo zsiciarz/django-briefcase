@@ -240,6 +240,13 @@ h2 {
   color: #999;
   text-align: right;
 }
+a.user, a.user:active, a.user:visited {
+  color: #1e8cc9 !important;
+  text-decoration: none;
+}
+a.user:hover {
+  text-decoration: underline !important;
+}
 
 .document-list {
   margin: 0;
@@ -250,31 +257,62 @@ h2 {
   margin: 10px 0;
   background-position: left center;
   background-repeat: no-repeat;
-  background-image: url(../images/icons/32/new_page.png);
-  padding: 0 0 0 40px;
-  line-height: 40px;
-  height: 40px;
 }
-.document-list .jpg_file { background-image: url(../images/icons/32/jpg_file.png); }
-.document-list .gif_file { background-image: url(../images/icons/32/gif_file.png); }
-.document-list .png_file { background-image: url(../images/icons/32/png_file.png); }
-.document-list .pdf_file { background-image: url(../images/icons/32/pdf_file.png); }
-.document-list .txt_file { background-image: url(../images/icons/32/txt_file.png); }
-.document-list .doc_file { background-image: url(../images/icons/32/doc_file.png); }
-.document-list .docx_file { background-image: url(../images/icons/32/doc_file.png); }
-.document-list .ppt_file { background-image: url(../images/icons/32/ppt_file.png); }
-.document-list .pptx_file { background-image: url(../images/icons/32/ppt_file.png); }
-.document-list .xls_file { background-image: url(../images/icons/32/xls_file.png); }
-.document-list .xlsx_file { background-image: url(../images/icons/32/xls_file.png); }
 .document-list a {
   color: #444;
 }
 .document-list a:hover {
   text-decoration: none;
 }
+.document-list a.user {
+  color: #1e8cc9;
+  text-decoration: none;
+}
+.document-list a.user:hover {
+  text-decoration: underline;
+}
 .filesize {
   color: #999;
   margin-left: 6px;
+}
+.document-list.simple li {
+  background-image: url(../images/icons/32/new_page.png);
+  padding: 0 0 0 40px;
+  line-height: 40px;
+  height: 40px;
+}
+.document-list.simple .jpg_file { background-image: url(../images/icons/32/jpg_file.png); }
+.document-list.simple .gif_file { background-image: url(../images/icons/32/gif_file.png); }
+.document-list.simple .png_file { background-image: url(../images/icons/32/png_file.png); }
+.document-list.simple .pdf_file { background-image: url(../images/icons/32/pdf_file.png); }
+.document-list.simple .txt_file { background-image: url(../images/icons/32/txt_file.png); }
+.document-list.simple .doc_file { background-image: url(../images/icons/32/doc_file.png); }
+.document-list.simple .docx_file { background-image: url(../images/icons/32/doc_file.png); }
+.document-list.simple .ppt_file { background-image: url(../images/icons/32/ppt_file.png); }
+.document-list.simple .pptx_file { background-image: url(../images/icons/32/ppt_file.png); }
+.document-list.simple .xls_file { background-image: url(../images/icons/32/xls_file.png); }
+.document-list.simple .xlsx_file { background-image: url(../images/icons/32/xls_file.png); }
+.document-list.normal li {
+  margin: 16px 0;
+  padding: 16px 0 0 72px;
+  min-height: 54px;
+  background-image: url(../images/icons/64/new_page.png);
+}
+.document-list.normal .jpg_file { background-image: url(../images/icons/64/jpg_file.png); }
+.document-list.normal .gif_file { background-image: url(../images/icons/64/gif_file.png); }
+.document-list.normal .png_file { background-image: url(../images/icons/64/png_file.png); }
+.document-list.normal .pdf_file { background-image: url(../images/icons/64/pdf_file.png); }
+.document-list.normal .txt_file { background-image: url(../images/icons/64/txt_file.png); }
+.document-list.normal .doc_file { background-image: url(../images/icons/64/doc_file.png); }
+.document-list.normal .docx_file { background-image: url(../images/icons/64/doc_file.png); }
+.document-list.normal .ppt_file { background-image: url(../images/icons/64/ppt_file.png); }
+.document-list.normal .pptx_file { background-image: url(../images/icons/64/ppt_file.png); }
+.document-list.normal .xls_file { background-image: url(../images/icons/64/xls_file.png); }
+.document-list.normal .xlsx_file { background-image: url(../images/icons/64/xls_file.png); }
+.metadata {
+  font-size: 90%;
+  margin-top: 3px;
+  color: #999;
 }
 .sidebar {
   width: 20%;
