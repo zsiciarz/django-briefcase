@@ -1,0 +1,37 @@
+{% load i18n %}
+{% load pagination_tags %}
+{% autopaginate document_list 5 %}
+
+{% if document_type %}
+<h3>{% trans "Showing only documents of type:" %} {{ document_type }}</h3>
+{% endif %}
+
+{% if document_list %}
+<ol class="document-list detailed">
+{% for document in document_list %}
+  <li class="document {{ document.type.extension }}_file">
+    <a class="download" href="{% url download_document document.id %}">{{ document }}</a>
+    <ul class="metadata">
+      <li class="type">{{ document.type }}</li>
+      <li class="added-by">
+        {% trans "added by:" %}
+        {% if document.added_by %} 
+        <a class="user" href="#">{{ document.added_by }}</a>
+        {% else %}
+        <em>Anonymous</em>
+        {% endif %}
+        ({{ document.added_at|timesince }} {% trans "ago" %})
+      </li>
+      <li class="status">{% trans "status:" %} 
+        <strong>{{ document.status|default_if_none:"unknown" }}</strong>
+      </li>
+      <li class="filesize">{% trans "size:" %} {{ document.get_size|filesizeformat }}</li>
+    </ul>
+  </li>
+{% endfor %}
+</ol>
+{% else %}
+<p>{% trans "No documents found." %}</p>
+{% endif %}
+
+{% paginate %}
