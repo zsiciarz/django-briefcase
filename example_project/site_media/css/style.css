@@ -240,13 +240,6 @@ h2 {
   color: #999;
   text-align: right;
 }
-a.user, a.user:active, a.user:visited {
-  color: #1e8cc9 !important;
-  text-decoration: none;
-}
-a.user:hover {
-  text-decoration: underline !important;
-}
 
 .document-list {
   margin: 0;
