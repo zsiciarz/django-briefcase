@@ -7,7 +7,7 @@
 {% endif %}
 
 {% if document_list %}
-<ol class="document-list">
+<ol class="document-list simple">
 {% for document in document_list %}
   <li class="document {{ document.type.extension }}_file">
     <a href="{% url download_document document.id %}">{{ document }}</a> <span class="filesize">({{ document.get_size|filesizeformat }})</span>
