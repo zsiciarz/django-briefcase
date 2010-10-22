@@ -1,3 +1,4 @@
+{% load i18n %}
 {% load pagination_tags %}
 {% autopaginate document_list 5 %}
 
@@ -6,10 +7,21 @@
 {% endif %}
 
 {% if document_list %}
-<ol class="document-list">
+<ol class="document-list normal">
 {% for document in document_list %}
   <li class="document {{ document.type.extension }}_file">
-    <a href="{% url download_document document.id %}">{{ document }}</a> <span class="filesize">({{ document.get_size|filesizeformat }})</span>
+    <a href="{% url download_document document.id %}">{{ document }}</a>
+    <div class="metadata">
+      <span class="added-by">
+        {% trans "added by:" %}
+        {% if document.added_by %} 
+        <a class="user" href="#">{{ document.added_by }}</a>
+        {% else %}
+        <em>Anonymous</em>
+        {% endif %}
+      </span>
+      <span class="filesize">({{ document.get_size|filesizeformat }})</span>
+    </div>
   </li>
 {% endfor %}
 </ol>
