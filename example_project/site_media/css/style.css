@@ -271,11 +271,25 @@ a.user:hover {
 .document-list a.user:hover {
   text-decoration: underline;
 }
+.metadata {
+  font-size: 90%;
+  margin-top: 3px;
+  color: #999;
+}
+ul.metadata {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul.metadata li {
+  margin: 0;
+  padding: 0;
+}
 .filesize {
   color: #999;
   margin-left: 6px;
 }
-.document-list.simple li {
+.document-list.simple > li {
   background-image: url(../images/icons/32/new_page.png);
   padding: 0 0 0 40px;
   line-height: 40px;
@@ -292,7 +306,7 @@ a.user:hover {
 .document-list.simple .pptx_file { background-image: url(../images/icons/32/ppt_file.png); }
 .document-list.simple .xls_file { background-image: url(../images/icons/32/xls_file.png); }
 .document-list.simple .xlsx_file { background-image: url(../images/icons/32/xls_file.png); }
-.document-list.normal li {
+.document-list.normal > li {
   margin: 16px 0;
   padding: 16px 0 0 72px;
   min-height: 54px;
@@ -309,11 +323,36 @@ a.user:hover {
 .document-list.normal .pptx_file { background-image: url(../images/icons/64/ppt_file.png); }
 .document-list.normal .xls_file { background-image: url(../images/icons/64/xls_file.png); }
 .document-list.normal .xlsx_file { background-image: url(../images/icons/64/xls_file.png); }
-.metadata {
-  font-size: 90%;
-  margin-top: 3px;
-  color: #999;
+.document-list.detailed > li {
+  margin: 24px 0;
+  padding: 16px 0 0 140px;
+  min-height: 124px;
+  background-image: url(../images/icons/128/new_page.png);
 }
+.document-list.detailed .download {
+  font-size: 110%;
+}
+.document-list.detailed .metadata {
+  margin-top: 10px;
+  font-size: 100%;
+}
+.document-list.detailed .metadata li {
+  margin: 3px 0;
+}
+.document-list.detailed .status strong {
+  text-transform: uppercase;
+}
+.document-list.detailed .jpg_file { background-image: url(../images/icons/128/jpg_file.png); }
+.document-list.detailed .gif_file { background-image: url(../images/icons/128/gif_file.png); }
+.document-list.detailed .png_file { background-image: url(../images/icons/128/png_file.png); }
+.document-list.detailed .pdf_file { background-image: url(../images/icons/128/pdf_file.png); }
+.document-list.detailed .txt_file { background-image: url(../images/icons/128/txt_file.png); }
+.document-list.detailed .doc_file { background-image: url(../images/icons/128/doc_file.png); }
+.document-list.detailed .docx_file { background-image: url(../images/icons/128/doc_file.png); }
+.document-list.detailed .ppt_file { background-image: url(../images/icons/128/ppt_file.png); }
+.document-list.detailed .pptx_file { background-image: url(../images/icons/128/ppt_file.png); }
+.document-list.detailed .xls_file { background-image: url(../images/icons/128/xls_file.png); }
+.document-list.detailed .xlsx_file { background-image: url(../images/icons/128/xls_file.png); }
 .sidebar {
   width: 20%;
   float: right;
