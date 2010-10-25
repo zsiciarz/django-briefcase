@@ -18,6 +18,7 @@ setup(
         'briefcase',
         'briefcase.migrations',
     ],
+    package_data = {'': ['data/mime.types']},
     include_package_data=True,
     classifiers=['Development Status :: 2 - Pre-Alpha',
                  'Environment :: Web Environment',
