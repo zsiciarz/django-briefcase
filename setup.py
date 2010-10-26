@@ -25,4 +25,5 @@ setup(
                  'Operating System :: OS Independent',
                  'Programming Language :: Python',
                  'Topic :: Utilities'],
+    zip_safe=False
 )
