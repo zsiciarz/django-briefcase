@@ -14,10 +14,7 @@ setup(
     url='http://github.com/zsiciarz/django-briefcase',
     license='MIT',
     install_requires=['Django', 'south'],
-    packages=[
-        'briefcase',
-        'briefcase.migrations',
-    ],
+    packages=find_packages(exclude=['example_project']),
     package_data = {'': ['data/mime.types']},
     include_package_data=True,
     classifiers=['Development Status :: 2 - Pre-Alpha',
