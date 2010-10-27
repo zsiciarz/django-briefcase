@@ -1,0 +1,141 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Document-related views reference &mdash; django-briefcase v0.1 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="django-briefcase v0.1 documentation" href="index.html" />
+    <link rel="prev" title="Usage" href="usage.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="usage.html" title="Usage"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">django-briefcase v0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="document-related-views-reference">
+<h1>Document-related views reference<a class="headerlink" href="#document-related-views-reference" title="Permalink to this headline">¶</a></h1>
+<p>This is a detailed reference of view functions provided by <tt class="docutils literal"><span class="pre">django-briefcase</span></tt>.</p>
+<div class="section" id="briefcase-views-document-list">
+<h2><tt class="docutils literal"><span class="pre">briefcase.views.document_list</span></tt><a class="headerlink" href="#briefcase-views-document-list" title="Permalink to this headline">¶</a></h2>
+<p>A very thin wrapper for the generic <tt class="docutils literal"><span class="pre">object_list</span></tt> view.</p>
+<p>Currently we supply here only the <tt class="docutils literal"><span class="pre">template_object_name</span></tt> argument, but
+more functionality may come and it is good to keep the generic document
+list in one place.
+This also allows for a greater customization by setting some view arguments
+in the URLconf.</p>
+<p>Template receives a <tt class="docutils literal"><span class="pre">document_list</span></tt> context variable which is a QuerySet
+instance.</p>
+</div>
+<div class="section" id="briefcase-views-general-recent-documents">
+<h2><tt class="docutils literal"><span class="pre">briefcase.views.general.recent_documents</span></tt><a class="headerlink" href="#briefcase-views-general-recent-documents" title="Permalink to this headline">¶</a></h2>
+<p>Renders a list of all documents sorted by creation date.</p>
+</div>
+<div class="section" id="briefcase-views-general-download-document">
+<h2><tt class="docutils literal"><span class="pre">briefcase.views.general.download_document</span></tt><a class="headerlink" href="#briefcase-views-general-download-document" title="Permalink to this headline">¶</a></h2>
+<p>Sends the document to the browser.</p>
+</div>
+<div class="section" id="briefcase-views-per-user-my-documents">
+<h2><tt class="docutils literal"><span class="pre">briefcase.views.per_user.my_documents</span></tt><a class="headerlink" href="#briefcase-views-per-user-my-documents" title="Permalink to this headline">¶</a></h2>
+<p>Renders a list of all documents added by current user.</p>
+</div>
+<div class="section" id="briefcase-views-per-user-documents-for-user">
+<h2><tt class="docutils literal"><span class="pre">briefcase.views.per_user.documents_for_user</span></tt><a class="headerlink" href="#briefcase-views-per-user-documents-for-user" title="Permalink to this headline">¶</a></h2>
+<p>Renders a list of documents added by a specific user.</p>
+<p>The user can be identified by his username or user_id. If both are
+specified, username takes precedence.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Document-related views reference</a><ul>
+<li><a class="reference internal" href="#briefcase-views-document-list"><tt class="docutils literal"><span class="pre">briefcase.views.document_list</span></tt></a></li>
+<li><a class="reference internal" href="#briefcase-views-general-recent-documents"><tt class="docutils literal"><span class="pre">briefcase.views.general.recent_documents</span></tt></a></li>
+<li><a class="reference internal" href="#briefcase-views-general-download-document"><tt class="docutils literal"><span class="pre">briefcase.views.general.download_document</span></tt></a></li>
+<li><a class="reference internal" href="#briefcase-views-per-user-my-documents"><tt class="docutils literal"><span class="pre">briefcase.views.per_user.my_documents</span></tt></a></li>
+<li><a class="reference internal" href="#briefcase-views-per-user-documents-for-user"><tt class="docutils literal"><span class="pre">briefcase.views.per_user.documents_for_user</span></tt></a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="usage.html"
+                        title="previous chapter">Usage</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/views-reference.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="usage.html" title="Usage"
+             >previous</a> |</li>
+        <li><a href="index.html">django-briefcase v0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010, `Zbigniew Siciarz &lt;http://siciarz.net/&gt;`_.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.4.
+    </div>
+  </body>
+</html>
