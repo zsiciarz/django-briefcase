@@ -17,7 +17,7 @@ setup(
     packages=find_packages(exclude=['example_project']),
     package_data = {'': ['data/mime.types']},
     include_package_data=True,
-    classifiers=['Development Status :: 2 - Pre-Alpha',
+    classifiers=['Development Status :: 4 - Beta',
                  'Environment :: Web Environment',
                  'Framework :: Django',
                  'Intended Audience :: Developers',
