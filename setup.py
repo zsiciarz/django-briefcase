@@ -15,7 +15,6 @@ setup(
     license='MIT',
     install_requires=['Django', 'south'],
     packages=find_packages(exclude=['example_project']),
-    #package_data = {'briefcase': ['data/mime.types']},
     include_package_data=True,
     classifiers=['Development Status :: 4 - Beta',
                  'Environment :: Web Environment',
