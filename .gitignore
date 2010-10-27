@@ -9,3 +9,4 @@ build/
 *.egg-info
 example.db
 /example_project/site_media/uploads/
+/docs/_build/
