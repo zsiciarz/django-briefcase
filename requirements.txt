@@ -1,0 +1,5 @@
+Django==1.2.5
+South==0.7.3
+django-debug-toolbar==0.8.4
+django-pagination==1.0.7
+
