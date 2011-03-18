@@ -23,10 +23,7 @@ def document_list(request, queryset, template_name, extension=None, **kwargs):
     Template receives a ``document_list`` context variable which is a QuerySet
     instance.
     """
-    if 'extra_context' not in kwargs:
-        extra_context = {}
-    else:
-        extra_context = kwargs.pop('extra_context')
+    extra_context = kwargs.pop('extra_context', {})
     if extension is not None:
         # we could get around without this query for DocumentType,
         # but we want the type object to be accessible in the template
