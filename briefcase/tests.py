@@ -14,12 +14,12 @@ class DocumentTypeTestCase(TestCase):
         self.assertEqual(document_type.mimetype, "application/octet-stream")
         self.assertEqual(document_type.name, "Unknown type")
 
-    def test_type_for_file_string(self):
-        for extension, mimetype in self.mimetypes:
-            filename = 'doc' + extension
-            document_type = DocumentType.type_for_file(filename)
-            self.assertEqual(document_type.mimetype, mimetype)
-            
+#    def test_type_for_file_string(self):
+#        for extension, mimetype in self.mimetypes:
+#            filename = 'doc' + extension
+#            document_type = DocumentType.type_for_file(filename)
+#            self.assertEqual(document_type.mimetype, mimetype)
+
     def test_name_from_extension(self):
         for extension, mimetype in self.mimetypes:
             filename = 'doc' + extension
@@ -31,7 +31,7 @@ class DocumentTypeTestCase(TestCase):
     def test_type_for_file_returns_the_same_type_object_after_editing(self):
         u"""
         We have to avoid creating multiple DocumentType objects for the same extension.
-        
+
         This test checks that after some kind of a modification to one type object,
         another one will not be created when calling type_for_file with the same file type.
         """
@@ -56,7 +56,7 @@ class TemplateTagsTestCase(TestCase):
         Initializes an empty template context - just in case.
         """
         self.context = template.Context({})
-        
+
     def render(self, template_content):
         t = template.Template(template_content)
         return t.render(self.context)
@@ -66,10 +66,10 @@ class TemplateTagsTestCase(TestCase):
             t = template.Template(template_content)
             t.render(self.context)
         self.assertRaises(template.TemplateSyntaxError, _render, template_content)
-    
+
     def assertContextHasntVariable(self, variable_name):
         self.assertFalse(variable_name in self.context)
-            
+
     def assertContextHasVariable(self, variable_name):
         self.assertTrue(variable_name in self.context)
 
