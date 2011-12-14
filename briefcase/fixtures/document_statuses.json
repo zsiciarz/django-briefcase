@@ -1,28 +1,28 @@
 [
     {
-        "pk": 2, 
-        "model": "briefcase.documentstatus", 
+        "pk": 2,
+        "model": "briefcase.documentstatus",
         "fields": {
-            "description": "", 
-            "name": "Unreviewed", 
+            "description": "",
+            "name": "Unreviewed",
             "slug": "unreviewed"
         }
-    }, 
+    },
     {
-        "pk": 3, 
-        "model": "briefcase.documentstatus", 
+        "pk": 3,
+        "model": "briefcase.documentstatus",
         "fields": {
-            "description": "", 
-            "name": "Published", 
+            "description": "",
+            "name": "Published",
             "slug": "published"
         }
-    }, 
+    },
     {
-        "pk": 1, 
-        "model": "briefcase.documentstatus", 
+        "pk": 1,
+        "model": "briefcase.documentstatus",
         "fields": {
-            "description": "", 
-            "name": "Draft", 
+            "description": "",
+            "name": "Draft",
             "slug": "draft"
         }
     }

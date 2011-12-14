@@ -18,19 +18,19 @@ for extension, mime_type in type_map.iteritems():
 class DocumentStatus(models.Model):
     u"""
     Status of the document.
-    
+
     Defines document's stage in the workflow or just marks it as some custom
     status, eg. draft, unreviewed, published, etc.
     """
     name        = models.CharField(_("status name"), max_length=150, help_text=_("Displayed name of the document's status."))
     slug        = models.SlugField(max_length=150, unique=True, help_text=_("Slug name - important for the programmers."))
     description = models.CharField(_("status description"), max_length=250, blank=True, help_text=_("Status description - can be left empty."))
-    
+
     class Meta:
         verbose_name = _("Document status")
         verbose_name_plural = _("Document statuses")
         ordering = ['-name']
-        
+
     def __unicode__(self):
         return self.name
 
@@ -57,21 +57,21 @@ class DocumentType(models.Model):
     def unknown_type(cls):
         u"""
         Returns a default document type - a generic "Unknown type".
-        
+
         This provides a sensible default value for a Document before saving it.
         """
         obj, created = cls.objects.get_or_create(mimetype="application/octet-stream",
                                                  name="Unknown type")
         return obj
-    
+
     @classmethod
     def type_for_file(cls, file):
         u"""
         Finds an apropriate DocumentType for the given file.
-        
-        ``file`` can be a Django model field (of type ``FileField``, which is 
+
+        ``file`` can be a Django model field (of type ``FileField``, which is
         accessed as ``FieldFile``), or simply a filename as a string.
-        
+
         If there were no such document type in the database, a new one is
         created, with default name consisting of uppercase extension and the
         'Document' word, for example: 'XLS Document'. This name can be of course
@@ -106,7 +106,7 @@ class Document(models.Model):
     added_by    = models.ForeignKey(User, verbose_name=_("added by"), null=True, blank=True, editable=False)
     added_at    = models.DateTimeField(_("added at"), auto_now_add=True)
     updated_at  = models.DateTimeField(_("recently changed at"), auto_now=True)
-    
+
     class Meta:
         verbose_name = _("Document")
         verbose_name_plural = _("Documents")
@@ -118,7 +118,7 @@ class Document(models.Model):
     def save(self, *args, **kwargs):
         u"""
         Attaches a guessed DocumentType to the Document object.
-        
+
         The check for id is a standard way to determine whether the object
         is created (no row in the database yet, hence no id) or updated.
         """
