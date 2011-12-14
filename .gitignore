@@ -10,3 +10,5 @@ build/
 example.db
 /example_project/site_media/uploads/
 /docs/_build/
+.coverage
+htmlcov/
